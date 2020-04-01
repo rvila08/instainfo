@@ -1,0 +1,2 @@
+# instainfo
+Instagram API 
