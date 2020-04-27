@@ -1,4 +1,4 @@
-My planned contributions for the next goal:
+My contributions so far:
 
 
-To assist in the main coding implementation aspect of our project in a hope to finish the main coding challenges by then.
+I implemented the code files necessary (hashtagsearch.py, info.py) that works to retreive the most popular post using a certain hashtag.
