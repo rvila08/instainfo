@@ -10,7 +10,7 @@ A project using Facebook for Developers' Instagram Graph API (more specifically 
 * Navigate to [http://127.0.0.1:5000/] (http://127.0.0.1:5000/) to now see [instainfo.html](https://github.com/rvila08/instainfo/blob/master/templates/instainfo.html) in full effect
 * One can know enter any hashtag into the text box and after submitting will be redirected to the most popular Instagram page containing that hashtag
 
-## Contributors
+## Information
 
 Group Members: Justin Bindi, Ethan Dang, James Romero, John Savage, Ricky Vila
 
