@@ -5,10 +5,10 @@ A project using Facebook for Developers' Instagram Graph API (more specifically 
 ## Instructions for Implementation
 
 * Clone into this repository
-* Run the command `python3 hashtagsearch.py`
-  * This will open a Flask server on your local host
-* Navigate to http://127.0.0.1:5000 to now see [instainfo.html](https://github.com/rvila08/instainfo/blob/master/templates/instainfo.html) in full effect
-* One can know enter any hashtag into the text box and after submitting will be redirected to the most popular Instagram page containing that hashtag
+* Run the command `python3 hashtagsearch.py`.
+  * This will open a Flask server on your local host.
+* Navigate to http://127.0.0.1:5000 to now see [instainfo.html](https://github.com/rvila08/instainfo/blob/master/templates/instainfo.html) in full effect.
+* One can know enter any hashtag into the text box and after submitting will be redirected to the most popular Instagram page containing that hashtag.
 
 ## Information
 
