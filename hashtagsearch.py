@@ -1,5 +1,7 @@
 from info import getCreds, makeApiCall
+from flask import Flask, render_template, request, redirect
 import sys
+import os
 
 def getHashtagInfo( params ) :
 	endpointParams = dict()
@@ -22,22 +24,31 @@ def getHashtagMedia( params ) :
 
 	return makeApiCall( url, endpointParams, params['debug'] )
 
-hashtag = 'coding'
+# Flask implementation
+app = Flask(__name__)
 
-params = getCreds()
-params['hashtag_name'] = hashtag
-hashtagInfoResponse = getHashtagInfo( params )
-params['hashtag_id'] = hashtagInfoResponse['json_data']['data'][0]['id'];
+@app.route('/')
+def instainfo():
+    return render_template('instainfo.html')
 
-params['type'] = 'top_media'
-hashtagTopMediaResponse = getHashtagMedia( params )
+# Returns Desired Link Based on HTML Input
+@app.route('/foo', methods=['GET', 'POST'])
+def foo():
+    hashtag = request.form['text']
 
-for post in hashtagTopMediaResponse['json_data']['data'] :
-	print ("\n\n---------- POST ----------\n")
-	print ("Link to post:")
-	print (post['permalink'])
-	print ("\nPost caption:")
-	print (post['caption'])
-	print ("\nMedia type:")
-	print (post['media_type'])
-	break
+    params = getCreds()
+    params['hashtag_name'] = hashtag
+    hashtagInfoResponse = getHashtagInfo( params )
+    params['hashtag_id'] = hashtagInfoResponse['json_data']['data'][0]['id'];
+
+    params['type'] = 'top_media'
+    hashtagTopMediaResponse = getHashtagMedia( params )
+    for post in hashtagTopMediaResponse['json_data']['data'] :
+        link = post['permalink']
+        break;
+    return redirect(link, code=302)
+
+# Redirects to Link Returned by Foo()
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
