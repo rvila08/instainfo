@@ -1,7 +1,6 @@
-FROM python:3
-
-ADD hashtagsearch.py /
-
+FROM python:alpine3.7
+COPY . /app
+WORKDIR /app
 RUN pip install flask
-
-CMD [ "python", "./hashtagsearch.py" ]
+EXPOSE 5000
+CMD python ./index.py
