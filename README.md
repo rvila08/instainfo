@@ -5,7 +5,7 @@ A project using Facebook for Developers' Instagram Graph API (more specifically 
 ## Instructions for Implementation With Docker
 
 * Clone into this repository
-* Run the command `docker build --tag [insert name here]`.
+* Run the command `docker build --tag [insert name here] .`.
 * Then run `docker run --name [insert name here] -p 5000:5000 [insert name here]`.
   * This will open a Flask server on your local host.
 * Navigate to http://0.0.0.0:5000/ to now see [instainfo.html](https://github.com/rvila08/instainfo/blob/master/templates/instainfo.html) in full effect.
